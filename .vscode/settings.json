@@ -1,0 +1,15 @@
+// 文件头部注释
+"fileheader.customMade": {
+    "Descripttion":"",
+    "version":"",
+    "Author":"wangwq",
+    "Date":"Do not edit",
+},
+//函数注释
+"fileheader.cursorMode": {
+    "name":"",
+    "test":"test font",
+    "msg":"",
+    "param":"",
+    "return":""
+}
