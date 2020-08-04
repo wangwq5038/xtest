@@ -6,3 +6,8 @@
 @LastEditors: wangwq
 @LastEditTime: 2020-06-27 16:29:15
 '''
+
+
+import time
+
+print(time.ctime())
