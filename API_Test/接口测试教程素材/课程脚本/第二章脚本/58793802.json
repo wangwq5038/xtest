@@ -1,0 +1,70 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Using setNextRequest",
+		"_postman_id": "558e6b17-3094-3faa-0429-198c621a1791",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Request 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"// Some code here",
+							"",
+							"postman.setNextRequest('Request 4')",
+							"",
+							"// Some code here"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "postman-echo.com/get",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Request 2",
+			"request": {
+				"url": "postman-echo.com/get",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Request 3",
+			"request": {
+				"url": "postman-echo.com/get",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Request 4",
+			"request": {
+				"url": "postman-echo.com/post",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,16 @@
+api_user:
+   - id: 1
+     username: sutune
+     email: sutune@163.com
+     groups: http://127.0.0.1:8000/groups/1/
+
+   - id: 2
+     username: 51zxw
+     email: 51zxw@163.com
+     groups: http://127.0.0.1:8000/groups/2/
+
+api_group:
+   - id: 1
+     name: Developer
+   - id: 2
+     name: Tester

@@ -1,0 +1,499 @@
+{
+	"info": {
+		"_postman_id": "515c2802-aec4-43df-a945-d7a16e841be6",
+		"name": "Postman_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "62615123-0bea-4624-817b-59c34da7d851",
+			"name": "get-request",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": ""
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": ""
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "postman-echo.com/get?userid={{userid}}",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "{{userid}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "5a04e726-fdcc-4279-9bdc-e7a5a729bcee",
+			"name": "variables",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "64288641-9e30-4412-a844-3e6bdc18c79f",
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"pm.variables.set(\"user\",'zxw');",
+							"pm.variables.set(\"passwd\",'6666')",
+							"",
+							"",
+							"",
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "66f17a71-3382-4c4a-867d-4b2994533895",
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{host}}/get?user={{user}}&passwd={{passwd}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "{{user}}"
+						},
+						{
+							"key": "passwd",
+							"value": "{{passwd}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "44731f60-d5af-4601-a4a1-49b312f18628",
+			"name": "delete-request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "postman-echo.com/delete?",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "340f43b6-c655-47fd-b85b-4f950c6bc294",
+			"name": "post-request",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b79e9a8f-c83f-4e15-a2c5-1fa1f4970695",
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"pm.variables.set(\"user\",'51zxw');",
+							"pm.variables.set(\"passwd\",\"6666\");",
+							"",
+							"",
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "de48845b-cc8f-41fc-965b-ec81cc3f0586",
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData=pm.response.json();",
+							"",
+							"userid=jsonData.json['userid'];",
+							"",
+							"console.log(userid);",
+							"",
+							"pm.globals.set(\"userid\", userid);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "user",
+							"value": "{{user}}",
+							"sessionValue": "{{user}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "passwd",
+							"value": "{{passwd}}",
+							"sessionValue": "{{passwd}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "userid",
+							"value": "8888",
+							"sessionValue": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "postman-echo.com/post",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "27ddd33c-8e7d-404d-aac7-5f11c54b9895",
+			"name": "put-request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "hello,51zxw"
+				},
+				"url": {
+					"raw": "postman-echo.com/put?user={{user_global}}",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"put"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "{{user_global}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "44c513aa-9953-45a1-ac9f-830735fd943a",
+			"name": "basic-auth",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "postman",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "postman-echo.com/basic-auth",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"basic-auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "1e668ca8-802c-4cbf-ab57-4ece9a4d82f8",
+			"name": "digest-auth",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "consumerKey",
+							"value": "51zxw",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "D+EdQ-gs$-%@2Nu7",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "postman-echo.com/oauth1",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"oauth1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "54d890a7-23ac-49f6-8ac8-a26cab52e5d6",
+			"name": "hawk auth",
+			"request": {
+				"auth": {
+					"type": "hawk",
+					"hawk": [
+						{
+							"key": "authKey",
+							"value": "werxhqb98rpaxn39848xrunpaw3489ruxnpa98w4rx",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "sha256",
+							"type": "string"
+						},
+						{
+							"key": "authId",
+							"value": "dh37fgj492je",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "postman-echo.com/auth/hawk",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"auth",
+						"hawk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "59a232c7-2d79-43c6-bdbd-2959da96e108",
+			"name": "oauth1",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "consumerSecret",
+							"value": "D+EdQ-gs$-%@2N",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "RKCGzna7bv9YD57c",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "postman-echo.com/oauth1",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"oauth1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "06d6a948-1bc6-4f34-b507-20460ee35676",
+			"name": "assert",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "9a348775-c4f8-4eda-92fd-7f0fd062915c",
+						"type": "text/javascript",
+						"exec": [
+							"pm.variables.set(\"user\",'zxw');"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b8dd6e36-7aa3-487a-bbb2-a1add69175bc",
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"",
+							"username=pm.variables.get(\"user\");",
+							"",
+							"console.log(username);",
+							"",
+							"pm.test(\"check username\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.json['user']).to.eql(username);",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "user",
+							"value": "{{user}}",
+							"sessionValue": "{{user}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "postman-echo.com/post",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

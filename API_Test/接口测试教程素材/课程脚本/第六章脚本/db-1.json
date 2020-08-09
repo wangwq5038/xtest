@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "zxw",
+      "author": "sutune"
+    },
+    {
+      "id": 3,
+      "title": "zxw666",
+      "author": {"name":"jack"}
+    },
+    {
+      "id": 4,
+      "title": "zxw888",
+      "author": "Bob"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "body": "hello 51zxw",
+      "postId": 2
+    },
+    {
+      "id": 3,
+      "body": "hello zxw2018",
+      "postId": 3
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

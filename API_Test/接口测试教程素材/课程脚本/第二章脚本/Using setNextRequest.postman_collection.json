@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "1e722665-cad3-43fd-9888-d0abfc744ab1",
+		"name": "Using setNextRequest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "a87f108e-b802-44d6-bef8-a70b01eb0848",
+			"name": "Request 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f0f1acc-6d34-45b9-b9aa-338b8d4917b4",
+						"type": "text/javascript",
+						"exec": [
+							"// Some code here",
+							"",
+							"postman.setNextRequest('Request 3')",
+							"",
+							"// Some code here"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "postman-echo.com/get",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "9f0167cb-910f-47fb-b81f-8cd627b19f76",
+			"name": "Request 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "df7842c9-2170-41a7-95fd-b64bdc77de43",
+						"type": "text/javascript",
+						"exec": [
+							"postman.setNextRequest('Request 4')"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "postman-echo.com/get",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "e65d91fd-2946-4f3d-b849-93589ff2bb0c",
+			"name": "Request 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d86de43e-2422-461f-a9ce-1e243a22d341",
+						"type": "text/javascript",
+						"exec": [
+							"postman.setNextRequest('Request 2')"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "postman-echo.com/get",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "75ef4810-a4a7-4688-b6e2-f30ee45cf7f1",
+			"name": "Request 4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "postman-echo.com/post",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

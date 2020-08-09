@@ -1,0 +1,32 @@
+2018-08-20 15:38:04,740 mysql_action.py[line:8] INFO ==================init data===============
+2018-08-20 15:38:04,740 mysql_action.py[line:9] INFO connect db...
+2018-08-20 15:38:04,749 mysql_action.py[line:13] INFO clear db...
+2018-08-20 15:38:04,754 mysql_action.py[line:21] INFO inser data...
+2018-08-20 15:38:04,754 mysql_action.py[line:28] INFO id,name
+2018-08-20 15:38:04,754 mysql_action.py[line:29] INFO '1','Developer'
+2018-08-20 15:38:04,754 mysql_action.py[line:32] INFO insert into api_group(id,name)values('1','Developer')
+2018-08-20 15:38:04,755 mysql_action.py[line:21] INFO inser data...
+2018-08-20 15:38:04,755 mysql_action.py[line:28] INFO id,name
+2018-08-20 15:38:04,756 mysql_action.py[line:29] INFO '2','Tester'
+2018-08-20 15:38:04,756 mysql_action.py[line:32] INFO insert into api_group(id,name)values('2','Tester')
+2018-08-20 15:38:04,756 mysql_action.py[line:13] INFO clear db...
+2018-08-20 15:38:04,761 mysql_action.py[line:21] INFO inser data...
+2018-08-20 15:38:04,761 mysql_action.py[line:28] INFO username,email,groups,id
+2018-08-20 15:38:04,761 mysql_action.py[line:29] INFO 'sutune','sutune@163.com','http://127.0.0.1:8000/groups/1/','1'
+2018-08-20 15:38:04,761 mysql_action.py[line:32] INFO insert into api_user(username,email,groups,id)values('sutune','sutune@163.com','http://127.0.0.1:8000/groups/1/','1')
+2018-08-20 15:38:04,762 mysql_action.py[line:21] INFO inser data...
+2018-08-20 15:38:04,762 mysql_action.py[line:28] INFO username,email,groups,id
+2018-08-20 15:38:04,762 mysql_action.py[line:29] INFO '51zxw','51zxw@163.com','http://127.0.0.1:8000/groups/2/','2'
+2018-08-20 15:38:04,763 mysql_action.py[line:32] INFO insert into api_user(username,email,groups,id)values('51zxw','51zxw@163.com','http://127.0.0.1:8000/groups/2/','2')
+2018-08-20 15:38:04,763 mysql_action.py[line:39] INFO close db
+2018-08-20 15:38:04,763 mysql_action.py[line:41] INFO =============init finished!============
+2018-08-20 15:38:04,938 run.py[line:27] INFO =========Start API Test=============
+2018-08-20 15:38:04,938 test_django_restful.py[line:60] INFO test_001_group_developer
+2018-08-20 15:38:05,029 test_django_restful.py[line:67] INFO test_002_add_group
+2018-08-20 15:38:05,127 test_django_restful.py[line:75] INFO test_003_update_group
+2018-08-20 15:38:05,233 test_django_restful.py[line:83] INFO test_004_delete_group
+2018-08-20 15:38:05,336 test_django_restful.py[line:14] INFO test_001_get_user
+2018-08-20 15:38:05,439 test_django_restful.py[line:22] INFO test_002_add_user
+2018-08-20 15:38:05,540 test_django_restful.py[line:32] INFO test_003_update_user
+2018-08-20 15:38:05,644 test_django_restful.py[line:40] INFO test_004_delete_user
+2018-08-20 15:38:05,746 test_django_restful.py[line:46] INFO test_005_no_auth

@@ -1,0 +1,533 @@
+{
+	"info": {
+		"_postman_id": "d1e8da65-71e2-43fe-9227-9dd2ffe3c29d",
+		"name": "Postman_Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "fe2dc9d0-4162-4b2c-b7a2-c320aedba2f9",
+			"name": "https://postman-echo.com/get?param1=51zxw&param2=66666",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1739602a-24df-4bae-8d55-2eff5ca76121",
+						"type": "text/javascript",
+						"exec": [
+							"//判断响应状态码",
+							"pm.test(\"check status code\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"//检测响应的内容",
+							"pm.test(\"Check param 51zxw\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"51zxw\");",
+							"});",
+							"",
+							"//检测响应时间是否小于0.5s",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "0c7d912a-cfca-4b05-be03-2c3881093ab6",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://postman-echo.com/get?param1=51zxw&param2=66666",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "param1",
+							"value": "51zxw"
+						},
+						{
+							"key": "param2",
+							"value": "66666"
+						}
+					]
+				},
+				"description": "发送Get请求，并传递两个参数。\n- param1:用户名\n- param2:密码"
+			},
+			"response": [
+				{
+					"id": "00c5c690-6c48-4215-a17e-7c39844754ad",
+					"name": "https://postman-echo.com/get?param1=51zxw&param2=66666",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://postman-echo.com/get?param1=51zxw&param2=66666",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"get"
+							],
+							"query": [
+								{
+									"key": "param1",
+									"value": "51zxw"
+								},
+								{
+									"key": "param2",
+									"value": "66666"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip",
+							"name": "Content-Encoding",
+							"description": "The type of encoding used on the data."
+						},
+						{
+							"key": "Content-Length",
+							"value": "344",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 12 Jul 2018 01:38:53 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d9-eC/XzZg03fLEYYJV169dYRmnokg\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "Server",
+							"value": "nginx",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding",
+							"name": "Vary",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"key": "set-cookie",
+							"value": "sails.sid=s%3Av975P6dn_Y567Jt-HvMTwcS2DsK5V4SK.xv5t9VUVw8EmspSRcE9HuH8IyOpTK0ZUeyxbMTlmHpI; Path=/; HttpOnly",
+							"name": "set-cookie",
+							"description": "an HTTP cookie"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 11:14:07 GMT+0800 (中国标准时间)",
+							"httpOnly": true,
+							"domain": "postman-echo.com",
+							"path": "/",
+							"secure": false,
+							"value": "s%3Av975P6dn_Y567Jt-HvMTwcS2DsK5V4SK.xv5t9VUVw8EmspSRcE9HuH8IyOpTK0ZUeyxbMTlmHpI",
+							"key": "sails.sid"
+						}
+					],
+					"body": "{\"args\":{\"param1\":\"51zxw\",\"param2\":\"66666\"},\"headers\":{\"host\":\"postman-echo.com\",\"accept\":\"*/*\",\"accept-encoding\":\"gzip, deflate\",\"cache-control\":\"no-cache\",\"cookie\":\"sails.sid=s%3A567OsCohO3HA-Dn4YB-hMpLbdbtcrGZd.z%2F7t2mbnm1i%2FBwmHHK%2BodkUR36kj403oTrSaet20j1c\",\"postman-token\":\"c989e2df-b9d0-4634-a99f-f3b2ae404bc8\",\"user-agent\":\"PostmanRuntime/7.1.5\",\"x-forwarded-port\":\"443\",\"x-forwarded-proto\":\"https\"},\"url\":\"https://postman-echo.com/get?param1=51zxw&param2=66666\"}"
+				}
+			]
+		},
+		{
+			"_postman_id": "e20ff171-2d63-40ed-a1a5-26c01ef723a4",
+			"name": "https://postman-echo.com/post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "hello 51zxw"
+				},
+				"url": {
+					"raw": "https://postman-echo.com/post",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "4aa5c720-09a5-4eb1-be3f-fa96586481e4",
+					"name": "https://postman-echo.com/post",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "hello 51zxw"
+						},
+						"url": {
+							"raw": "https://postman-echo.com/post",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"_postman_id": "b991875e-8a02-4265-ba9f-576b9bfa49c9",
+			"name": "https://postman-echo.com/put",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://postman-echo.com/put",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"put"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "6bfb6f2b-ac28-473e-88a6-3ee18dd6e351",
+					"name": "https://postman-echo.com/put",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://postman-echo.com/put",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"put"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"_postman_id": "f957839b-191b-4cf7-9c32-e1cb3465c156",
+			"name": "https://postman-echo.com/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://postman-echo.com/delete",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "907348f0-bcf9-409a-ac0c-4ac771f71c64",
+			"name": "https://postman-echo.com/basic-auth",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "postman",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://postman-echo.com/basic-auth",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"basic-auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "0ff528dd-c764-4419-b4a8-40cdcb73feb1",
+			"name": "https://postman-echo.com/digest-auth",
+			"request": {
+				"auth": {
+					"type": "digest",
+					"digest": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "postman",
+							"type": "string"
+						},
+						{
+							"key": "nonce",
+							"value": "ni1LiL0O37PRRhofWdCLmwFsnEtH1lew",
+							"type": "string"
+						},
+						{
+							"key": "realm",
+							"value": "Users",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "MD5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://postman-echo.com/digest-auth",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"digest-auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "36718694-12e1-4511-bf81-b983dc365721",
+			"name": "https://postman-echo.com/auth/hawk",
+			"request": {
+				"auth": {
+					"type": "hawk",
+					"hawk": [
+						{
+							"key": "authKey",
+							"value": "werxhqb98rpaxn39848xrunpaw3489ruxnpa98w4rxn",
+							"type": "string"
+						},
+						{
+							"key": "authId",
+							"value": "dh37fgj492je",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "sha256",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://postman-echo.com/auth/hawk",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"auth",
+						"hawk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "cccbcb4a-162d-4f3d-b556-0314a84c7ace",
+			"name": "https://postman-echo.com/oauth1",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "addParamsToHeader",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "D+EdQ-gs$-%@2Nu7",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "RKCGzna7bv9YD57c",
+							"type": "string"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://postman-echo.com/oauth1",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"oauth1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "aec60e87-86ca-4eee-9dfc-c6729c77d55b",
+			"name": "set_cookie",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://www.baidu.com//www.baidu.com/img/baidu_85beaf5496f291521eb75ba38eacbd87.svg",
+					"protocol": "http",
+					"host": [
+						"www",
+						"baidu",
+						"com"
+					],
+					"path": [
+						"",
+						"www.baidu.com",
+						"img",
+						"baidu_85beaf5496f291521eb75ba38eacbd87.svg"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,5 @@
+caseSeq,apiType,apiSeq,apiName,priority,url,methods,parameter,expectValue
+C001,Http methods,V0.9.2,GET Request 51zxw,H,/get,GET,user=51zxw,51zxw
+C002,Http methods,V0.9.2,POST Request 51zxw,H,/post,POST,user:51zxw,51zxw
+C003,Http methods,V0.9.2,GET Request zxw2018,H,/get,GET,user=zxw2018,zxw2018
+C004,Http methods,V0.9.2,POST Request zxw666,H,/post,POST,user:zxw666,zxw666
