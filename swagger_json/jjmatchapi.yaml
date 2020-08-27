@@ -1,0 +1,971 @@
+- description: 用户登录
+  request:
+    uri: /admin/login
+    method: post
+    headers:
+      content-type: application/json
+    json:
+      name: wangshuo
+      password: wangshuo123
+    cookies:
+      token: '1234567890'
+  response:
+    status: 200
+    cookies:
+      token: '1234567890'
+    json:
+      code: 0
+      msg: success
+      data:
+        name: wangshuo
+        password: wangshuo123
+- description: 获取所有选手列表
+  request:
+    uri: /admin/getallplayers
+    method: get
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+- description: 获取单个选手详细信息
+  request:
+    uri: /admin/player
+    method: get
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+- description: 创建比赛
+  request:
+    uri: /admin/match/create
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      matchName: test_01
+      playerCountPerTeam: '4'
+      playerType: '2'
+      grade: normal
+      gameTypeId: '1'
+      systemType: online
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchName: test_01
+- description: 获取比赛列表
+  request:
+    uri: /admin/matchList
+    method: get
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    queries:
+      pageSize: '10'
+      pageIndex: '1'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+- description: 获取比赛阶段列表
+  request:
+    uri: /admin/matchPhases
+    method: get
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    queries:
+      matchId: '2425'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+- description: 获取比赛基本信息
+  request:
+    uri: /admin/matchInfo
+    method: get
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    queries:
+      matchId: '2425'
+  response:
+    status: 200
+    cookies:
+      login: 'true'
+      token: '1234567890'
+    json:
+      code: 0
+      msg: success
+- description: 获取比赛基本设置
+  request:
+    uri: /admin/matchSetting
+    method: get
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    queries:
+      matchId: '2425'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+- description: 设置比赛基本配置
+  request:
+    uri: /admin/setMatchSetting
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      matchId: '2425'
+      name: test_01
+      grade: normal
+      systemType: online
+      cfg: Default value
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+        matchName: test_01
+- description: 获取比赛阶段设置
+  request:
+    uri: /admin/matchPhaseSetting
+    method: get
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    queries:
+      matchId: '2425'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+- description: 设置比赛阶段配置
+  request:
+    uri: /admin/setMatchphaseSetting
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      matchId: '2425'
+      phaseId: '1066'
+      cfg: Default value
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 创建比赛阶段
+  request:
+    uri: /admin/createPhase
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      matchId: '2425'
+      phaseType: '2'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 生成签到密码
+  request:
+    uri: /admin/genPassword
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      matchId: '2425'
+      genType: default
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 上传选手比赛名单
+  request:
+    uri: /admin/importNameList
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      matchId: '2425'
+      nameList: excel
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 上传团赛选手名单
+  request:
+    uri: /admin/importTeamNameList
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      matchId: '2425'
+      nameList: excel
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 选手签到
+  request:
+    uri: /admin/playerSign
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      matchId: '2425'
+      playerId: '1066'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 选手取消签到
+  request:
+    uri: /admin/playerResign
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      matchId: '2425'
+      playerId: '1066'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 获取选手签到名单
+  request:
+    uri: /admin/playerSignList
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      matchId: '2425'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 下载比赛签到密码、账户Excel表(个人赛)
+  request:
+    uri: /admin/getMatchAccountExcel
+    method: get
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    queries:
+      matchId: '2425'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+- description: 下载比赛选手签到结果Excel表（个人赛）
+  request:
+    uri: /admin/getMatchSignInExcel
+    method: get
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    queries:
+      matchId: '2425'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+- description: 查询比赛成绩（个人定局积分）
+  request:
+    uri: /admin/getMatchSingleResult
+    method: get
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    queries:
+      matchId: '2425'
+      boutId: '1066'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+- description: 删除比赛
+  request:
+    uri: /admin/deleteMatch
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      matchId: '2425'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 获取比赛服务器列表
+  request:
+    uri: /admin/getGameServer
+    method: get
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    queries:
+      pageSize: '10'
+      pageIndex: '1'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+- description: 添加游戏服务器
+  request:
+    uri: /admin/addGameServer
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      serverName: test_1.0
+      ipAddr: 192.168.9.87
+      port: '31002'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 编辑游戏服务器
+  request:
+    uri: /admin/editGameServer
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      id: '1001'
+      serverName: test_1.0
+      ipAddr: 192.168.9.87
+      port: '31002'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 移除游戏服
+  request:
+    uri: /admin/removeGameServer
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      id: '1001'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 获取打牌器列表
+  request:
+    uri: /admin/getPlayerClient
+    method: get
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    queries:
+      pageSize: '10'
+      pageIndex: '1'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+- description: 注册打牌器
+  request:
+    uri: /admin/regPlayerClient
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      clientUid: '1001'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 删除打牌器
+  request:
+    uri: /admin/removePlayerClient
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      clientId: '10011'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 获取打牌器组列表
+  request:
+    uri: /admin/getPlayerClientGroup
+    method: get
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    queries:
+      pageSize: '10'
+      pageIndex: '1'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+- description: 创建打牌器组
+  request:
+    uri: /admin/createPlayerClientGroup
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      groupName: match
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 编辑打牌器组
+  request:
+    uri: /admin/editPlayerClientGroup
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      groupId: '1001'
+      groupName: match
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 删除打牌器组
+  request:
+    uri: /admin/removePlayerClientGroup
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      groupId: '1001'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 绑定打牌器至打牌器组
+  request:
+    uri: /admin/bindPlayerClientToGroup
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      playerClientId: '1001'
+      playerClientGroupId: '10001'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 解绑打牌器
+  request:
+    uri: /admin/unbindPlayerClientFromGroup
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      playerClientId: '1001'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 绑定打牌器组至比赛
+  request:
+    uri: /admin/bindPlayerClientGroupToMatch
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      playerClientGroupId: '10001'
+      matchId: '2425'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 解绑打牌器组
+  request:
+    uri: /admin/unbindPlayerClientGroupFromMatch
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      playerClientGroupId: '10001'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 获取轮次中牌副比赛结果（团赛）
+  request:
+    uri: /admin/boutDeckResult
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      matchId: '10001'
+      boutId: '1066'
+      tableAId: '322'
+      tableBId: '324'
+      teamRedId: '326'
+      teamBlueId: '329'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 获取个人赛牌副成绩
+  request:
+    uri: /admin/singleDeckResult
+    method: get
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    queries:
+      matchId: '2425'
+      boutId: '1066'
+      tableId: '996'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+- description: 获取比赛轮成绩
+  request:
+    uri: /admin/boutResult
+    method: get
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    queries:
+      matchId: '2425'
+      boutId: '1066'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+- description: 获取节成绩
+  request:
+    uri: /admin/sectionResult
+    method: get
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    queries:
+      matchId: '2425'
+      sectioId: '345'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+- description: 获取阶段成绩
+  request:
+    uri: /admin/phaseResult
+    method: get
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    queries:
+      matchId: '2425'
+      phaseId: '1066'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+- description: 获取队伍列表
+  request:
+    uri: /admin/allTeams
+    method: get
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    queries:
+      pageSize: '10'
+      pageIndex: '1'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+- description: 裁判端登录
+  request:
+    uri: /judge/login
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      name: wangshuo
+      password: wangshuo123
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        name: wangshuo
+        password: wangshuo123
+- description: 裁判端登出
+  request:
+    uri: /judge/logout
+    method: get
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+- description: 获取比赛阶段详情列表
+  request:
+    uri: /judge/matchPhases
+    method: get
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    queries:
+      matchId: '2425'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+- description: 获取比赛设置
+  request:
+    uri: /judge/matchSetting
+    method: get
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    queries:
+      matchId: '2425'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+- description: 设置比赛状态
+  request:
+    uri: /judge/setMatchStatus
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      matchId: '2425'
+      status: finished
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+        status: finished
+- description: 设置比赛配置
+  request:
+    uri: /judge/setMatchSetting
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      matchId: '2425'
+      config: double
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+        config: double
+- description: 开始比赛
+  request:
+    uri: /judge/startMatch
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      matchId: '2425'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 已开始比赛详细信息（个人赛）
+  request:
+    uri: /judge/matchPlayInfo
+    method: get
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    queries:
+      matchId: '2425'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+- description: 开始本轮比赛（个人赛）
+  request:
+    uri: /judge/match/startBout
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      matchId: '2425'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 获取游戏服所需比赛开始信息（个人赛）
+  request:
+    uri: /judge/match/startInfo
+    method: get
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    queries:
+      matchId: '2425'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+- description: 结束本轮比赛（个人赛）
+  request:
+    uri: /judge/match/endBout
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      matchId: '2425'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 终止比赛
+  request:
+    uri: /judge/match/terminateMatch
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      name: wangshuo
+      password: wangshuo123
+      matchId: '2425'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
+- description: 获取比赛服务器列表
+  request:
+    uri: /judge/server/getServerList
+    method: get
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+- description: 设置比赛开始服
+  request:
+    uri: /judge/match/setServer
+    method: post
+    headers:
+      content-type: application/json
+    cookies:
+      token: '1234567890'
+    json:
+      matchId: '2425'
+      serverId: '8'
+  response:
+    status: 200
+    json:
+      code: 0
+      msg: success
+      data:
+        matchId: '2425'
