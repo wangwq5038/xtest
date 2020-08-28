@@ -1,0 +1,5 @@
+使用python协程aiohttp
+框架使用pytest
+报告使用allure
+数据文件存储在data.yaml文件中
+异步读取文件aiofiles,yaml_load是一个协程
