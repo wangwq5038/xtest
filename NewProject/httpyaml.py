@@ -39,7 +39,7 @@ def auto_gen_cases(swagger_url, project_name):
     :param project_name:
     :return:
     """
-    swagger_url = 'http://139.224.26.136:8081/swagger.json'
+    swagger_url = /swagger.json'
     res = Session().request('get', swagger_url).json()
     data = res.get('paths')
 
@@ -99,7 +99,7 @@ def auto_gen_cases(swagger_url, project_name):
 
         os.chdir(project_)   #改变当前工作目录到指定的路径,指定到project_
 
-# swagger_url = 'http://139.224.26.136:8081/swagger.json'
+# swagger_url = '/swagger.json'
 # res = Session().request('get', swagger_url).json()
 # data = res.get('paths')
 #
