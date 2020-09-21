@@ -1,0 +1,5 @@
+method: post
+url: http://IP/admin/login
+params:
+    name: $name
+    password: $password
