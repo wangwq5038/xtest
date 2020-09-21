@@ -39,6 +39,6 @@ class GetToken(BaseApi):
         return r
 
 
-if __name__ == '__main__':
-    gt = GetToken()
-    gt.template()
+# if __name__ == '__main__':
+#     gt = GetToken()
+#     gt.template()

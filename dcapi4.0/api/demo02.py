@@ -17,12 +17,12 @@ def request(flow:http.HTTPFlow):
 def request(flow:http.HTTPFlow):
     if "admin/login" in flow.request.pretty_url:
     # if flow.request.pretty_url == "http://example.com/path":
-    with open("./tmp.json", encoding="utf-8") as f:
-        flow.response = http.HTTPResponse.make(
-            200,
-            f.read(),
-            {"Content-Type":"text/html"}
-        )
+        with open("./tmp.json", encoding="utf-8") as f:
+            flow.response = http.HTTPResponse.make(
+                200,
+                f.read(),
+                {"Content-Type":"text/html"}
+            )
 
 
 
